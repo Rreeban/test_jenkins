@@ -1,0 +1,39 @@
+pipeline {
+
+  agent none
+   
+  stages {
+   
+    parallel {
+     
+      stage ('Etape 1') {
+       
+        agent {
+          label 'Maitre'
+        }
+         
+        steps {
+          sleep 15
+          echo 'Fin de l\'etape 1'
+        }
+         
+      }
+       
+      stage ('Etape 2') {
+       
+        agent {
+          label 'Linux'
+        }
+         
+        steps {
+          sleep 15
+          echo 'Fin de l\'etape 2' 
+        }
+         
+      }
+     
+    }
+     
+  }
+   
+}
