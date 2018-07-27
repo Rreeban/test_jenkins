@@ -1,0 +1,9 @@
+node {
+  stage('Exemple') {
+    if (env.BRANCH_NAME == 'master') {
+      echo 'Je m\' execute sur la branche master'
+    } else {
+      echo 'Je m\' execute sur une autre branche'
+    }
+  }
+}
