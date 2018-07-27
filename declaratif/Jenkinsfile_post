@@ -5,6 +5,11 @@ pipeline {
       steps {
         echo 'Hello World'
       }
+      post {
+        always {
+          echo 'Fin de l'Etape 1'
+        }
+      }
     }
     stage('Etape 2') {
       steps {
