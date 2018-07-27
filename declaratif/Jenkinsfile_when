@@ -1,0 +1,21 @@
+pipeline {
+
+  agent any
+  
+  stages {
+  
+    stage ('Etape') {
+
+      when {
+        branch "master"
+      }
+      
+      steps {
+        echo 'Bonjour depuis master !'
+      }
+      
+    }
+    
+  }
+  
+}
