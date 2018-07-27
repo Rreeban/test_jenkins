@@ -1,0 +1,26 @@
+pipeline {
+  agent any
+  stages {
+    stage('Etape 1') {
+      steps {
+        echo 'Hello World'
+      }
+    }
+    stage('Etape 2') {
+      steps {
+        sh 'exit 1'
+        echo 'Hello world ! again'
+      }
+      post {
+        failure {
+          echo 'Echec de l'étape 2'
+        }
+      }
+    }
+  }
+  post { 
+    always { 
+      echo 'I will always say Hello again!'
+    }
+  }
+}
